@@ -1,0 +1,1 @@
+THis is where i will store blend files and fbxes i am working on for access and to be separated from all game assets and each otherès work.
