@@ -31,11 +31,15 @@ public class PlayerController : MonoBehaviour
 
     Rigidbody rb;
 
+    [Header("Timer Check")]
+    public Timer timer;
+
     public void Start()
     {
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
         readyToJump = true;
+        
     }
 
 
@@ -44,10 +48,10 @@ public class PlayerController : MonoBehaviour
         //ground check
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
 
-
-        MyInput();
-        SpeedControl();
-
+        if (timer.timesIUp == false) {
+            MyInput();
+            SpeedControl();
+        }
         //handle drag
         if (grounded)
         {
@@ -59,7 +63,10 @@ public class PlayerController : MonoBehaviour
 
     public void FixedUpdate()
     {
-        MovePlayer();
+        if (timer.timesIUp == false)
+        {
+            MovePlayer();
+        }
     }
     private void MyInput()
     {
