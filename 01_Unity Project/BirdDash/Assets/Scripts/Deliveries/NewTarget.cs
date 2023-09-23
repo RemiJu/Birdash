@@ -40,7 +40,7 @@ public class NewTarget : MonoBehaviour
                 
                 allTargets = GameObject.FindGameObjectsWithTag("targets");
                 index = Random.Range(0, allTargets.Length);
-                currentTarget.transform.position = allTargets[index].transform.position;
+                currentTarget.transform.position = allTargets[index].transform.position + new Vector3(0, 20, 0);
 
                 currentTarget.GetComponent<SpriteRenderer>().enabled = true;
             }
