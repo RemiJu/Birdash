@@ -11,9 +11,19 @@ public class AtHome : MonoBehaviour
         
         if (collision.gameObject.CompareTag("Home"))
         { newTarget.atHome = true;
-            newTarget.meals = 3;
+            
         }
-        else { newTarget.atHome = false; }
+       
+    }
+    public void OnTriggerExit(Collider collision)
+    {
+
+        if (collision.gameObject.CompareTag("Home"))
+        {
+            newTarget.atHome = false;
+
+        }
+       
 
     }
 }

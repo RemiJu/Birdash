@@ -8,7 +8,9 @@ public class NewTarget : MonoBehaviour
     public GameObject currentTarget;
     public Transform home;
     public bool atHome;
-    public int meals;
+    public Vector3 distance;
+    public float threshold;
+    
 
     GameObject[] allTargets;
     int index;
@@ -22,20 +24,25 @@ public class NewTarget : MonoBehaviour
         
     }
 
+    public void Update()
+    {
+        distance = currentTarget.transform.position - transform.position;
+    }
+
     public void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.CompareTag("Player")) 
+        if (collision.gameObject.CompareTag("Player"))
         {
-            
 
-            if (((currentTarget.transform.position != home.transform.position) && !atHome)) 
+
+            if (((distance.magnitude < threshold) && !atHome))
             {
                 currentTarget.transform.position = home.transform.position;
                 currentTarget.GetComponent<SpriteRenderer>().enabled = false;
-               
+
             }
 
-            else if (currentTarget.transform.position == home.transform.position && atHome)
+            else if ((distance.magnitude < threshold) && atHome)
             {
                 
                 allTargets = GameObject.FindGameObjectsWithTag("targets");

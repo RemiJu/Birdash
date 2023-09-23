@@ -589,8 +589,8 @@ GameObject:
   - component: {fileID: 142190366}
   - component: {fileID: 142190369}
   - component: {fileID: 142190368}
-  - component: {fileID: 142190367}
   - component: {fileID: 142190370}
+  - component: {fileID: 142190367}
   m_Layer: 0
   m_Name: Home
   m_TagString: Home
@@ -6085,7 +6085,8 @@ MonoBehaviour:
   currentTarget: {fileID: 0}
   home: {fileID: 1346437764}
   atHome: 0
-  meals: 0
+  distance: {x: 0, y: 0, z: 0}
+  threshold: 3
 --- !u!65 &1575291287
 BoxCollider:
   m_ObjectHideFlags: 0
