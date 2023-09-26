@@ -12,6 +12,7 @@ public class FallOver : MonoBehaviour
     {
         // Get the BoxCollider component attached to the GameObject
         boxCollider = GetComponent<BoxCollider>();
+        
         unicycle = transform.parent.gameObject;
     }
 

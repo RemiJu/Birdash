@@ -29,14 +29,14 @@ public class PlayerController : MonoBehaviour
 
     Vector3 moveDirection;
 
-    Rigidbody rb;
+    public Rigidbody rb;
 
     [Header("Timer Check")]
     public Timer timer;
 
     public void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        //rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
         readyToJump = true;
         
@@ -48,10 +48,20 @@ public class PlayerController : MonoBehaviour
         //ground check
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
 
-        if (timer.timesIUp == false) {
+
+
+
+        if (timer != null && timer.timesIUp == false)
+        {
+            MyInput();
+            SpeedControl();
+
+        }
+        else if (timer == null ){
             MyInput();
             SpeedControl();
         }
+        
         //handle drag
         if (grounded)
         {
@@ -63,10 +73,11 @@ public class PlayerController : MonoBehaviour
 
     public void FixedUpdate()
     {
-        if (timer.timesIUp == false)
+        if (timer != null && timer.timesIUp == false)
         {
             MovePlayer();
         }
+        else if (timer ==null) { MovePlayer(); }
     }
     private void MyInput()
     {
@@ -85,12 +96,12 @@ public class PlayerController : MonoBehaviour
         
         }
     
-    }
+   }
 
-    private void MovePlayer() 
-    { 
-     //calculate movement direction
-     moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
+    private void MovePlayer()
+    {
+        //calculate movement direction
+        moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
 
         //on ground
         if (grounded)
@@ -102,6 +113,8 @@ public class PlayerController : MonoBehaviour
         {
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);
         }
+
+       
     }
 
     private void SpeedControl() 
