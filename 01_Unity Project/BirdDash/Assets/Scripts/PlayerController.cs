@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public HingeJoint BottomWheelHinge;
+    private JointSpring BottomWheelSpring;
+
     [Header("Movement")]
     public float moveSpeed;
     public float groundDrag;
@@ -29,17 +32,20 @@ public class PlayerController : MonoBehaviour
 
     Vector3 moveDirection;
 
+    float targetRotation;
+
     public Rigidbody rb;
 
     [Header("Timer Check")]
     public Timer timer;
 
-    public void Start()
+    public void Awake()
     {
         //rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
         readyToJump = true;
-        
+
+        BottomWheelSpring = BottomWheelHinge.spring;
     }
 
 
@@ -82,6 +88,7 @@ public class PlayerController : MonoBehaviour
     private void MyInput()
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
+
         verticalInput = Input.GetAxisRaw("Vertical");
 
         //when to jump
@@ -101,11 +108,34 @@ public class PlayerController : MonoBehaviour
     private void MovePlayer()
     {
         //calculate movement direction
-        moveDirection = orientation.forward * Mathf.Abs(verticalInput) + orientation.right * horizontalInput;
+
+        float horizontalMovement = rb.velocity.magnitude / moveSpeed * horizontalInput;
+
+        moveDirection = orientation.forward * Mathf.Abs(verticalInput) + orientation.right * horizontalMovement;
 
         //on ground
         if (grounded)
         {
+            float inputRotationInfluence = (-horizontalInput + 1) / 2;
+
+            float wheelZAngle = BottomWheelHinge.transform.rotation.eulerAngles.z;
+            float wheelDirection = (wheelZAngle < 180) ? 1 : -1;
+
+            float gravityRotationInfluence = (wheelZAngle < 180) ? BottomWheelHinge.transform.rotation.eulerAngles.z : 360 - BottomWheelHinge.transform.rotation.eulerAngles.z;
+            gravityRotationInfluence *= wheelDirection;
+
+            targetRotation += Mathf.Lerp(-90, 90, inputRotationInfluence) * Time.deltaTime;
+            targetRotation += gravityRotationInfluence * Time.deltaTime;
+
+            targetRotation = Mathf.Clamp(targetRotation, -90, 90);
+
+            Debug.Log(Mathf.Lerp(-90, 90, inputRotationInfluence));
+
+            BottomWheelSpring.targetPosition += targetRotation * Time.deltaTime;
+            BottomWheelSpring.targetPosition = Mathf.Clamp(BottomWheelSpring.targetPosition, -90, 90);
+
+            BottomWheelHinge.spring = BottomWheelSpring;
+
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
         }
         //in air

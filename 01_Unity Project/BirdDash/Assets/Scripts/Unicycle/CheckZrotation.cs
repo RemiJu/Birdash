@@ -14,13 +14,13 @@ public class CheckZrotation : MonoBehaviour
     {
         if ((this.transform.rotation.eulerAngles.z > rotationMax && this.transform.rotation.eulerAngles.z < floorMax)) 
         {
-            Debug.Log("You have fallen left");
+            //Debug.Log("You have fallen left");
 
         }
 
         if ((this.transform.rotation.eulerAngles.z > floorMin && this.transform.rotation.eulerAngles.z < rotationMin))
         {
-            Debug.Log("You have fallen right");
+           // Debug.Log("You have fallen right");
 
         }
 
