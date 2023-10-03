@@ -4,12 +4,21 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [Header("Unicycle Movement")]
     public HingeJoint BottomWheelHinge;
     private JointSpring BottomWheelSpring;
+    float targetRotation;
+    public float acceleration;
+    public Quaternion originalRotation;
+    
 
     [Header("Movement")]
     public float moveSpeed;
     public float groundDrag;
+    Vector3 moveDirection;
+    public Transform orientation;
+    float horizontalInput;
+    float verticalInput;
 
     [Header("Jump")]
     public float jumpForce;
@@ -25,19 +34,12 @@ public class PlayerController : MonoBehaviour
     public LayerMask whatIsGround;
     bool grounded;
 
-    public Transform orientation;
-
-    float horizontalInput;
-    float verticalInput;
-
-    Vector3 moveDirection;
-
-    float targetRotation;
-
     public Rigidbody rb;
 
     [Header("Timer Check")]
     public Timer timer;
+
+
 
     public void Awake()
     {
@@ -46,6 +48,10 @@ public class PlayerController : MonoBehaviour
         readyToJump = true;
 
         BottomWheelSpring = BottomWheelHinge.spring;
+
+        originalRotation = transform.rotation;
+        
+
     }
 
 
@@ -137,6 +143,7 @@ public class PlayerController : MonoBehaviour
             BottomWheelHinge.spring = BottomWheelSpring;
 
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
+
         }
         //in air
         else if (!grounded)
@@ -144,6 +151,7 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);
         }
 
+        
        
     }
 
@@ -154,7 +162,7 @@ public class PlayerController : MonoBehaviour
         //limit velocity if needed
         if (flatVel.magnitude > moveSpeed) 
         { 
-            Vector3 limitedVel = flatVel.normalized *moveSpeed;
+            Vector3 limitedVel = flatVel.normalized * moveSpeed;
             rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
         
         }
@@ -171,4 +179,6 @@ public class PlayerController : MonoBehaviour
 
     private void ResetJump() 
     { readyToJump = true; }
+
+
 }
