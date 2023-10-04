@@ -49,14 +49,14 @@ public class NewTarget : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Delivery"))
         {
-            meal--;
-            score++;
+            
 
             if (((distance.magnitude < threshold)))
             {
                 currentTarget.transform.position = home.transform.position;
-                
 
+                meal--;
+                score++;
             }
         }
 
@@ -64,7 +64,7 @@ public class NewTarget : MonoBehaviour
             
         {
             atHome = true;
-            meal++;
+            
 
             if ((distance.magnitude < threshold))
             {
@@ -72,8 +72,8 @@ public class NewTarget : MonoBehaviour
                 allTargets = GameObject.FindGameObjectsWithTag("Delivery");
                 index = Random.Range(0, allTargets.Length);
                 currentTarget.transform.position = allTargets[index].transform.position;
+                meal++;
 
-                
             } 
         }
 

@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     [Header("Movement")]
     public float moveSpeed;
     public float groundDrag;
+    float verticalInputCheck;
 
     [Header("Jump")]
     public float jumpForce;
@@ -113,7 +114,16 @@ public class PlayerController : MonoBehaviour
 
         float horizontalMovement = rb.velocity.magnitude / moveSpeed * horizontalInput;
 
-        moveDirection = orientation.forward * Mathf.Abs(verticalInput) + orientation.right * horizontalMovement;
+        
+
+        if (verticalInput >= 0) {
+            verticalInputCheck = verticalInput;
+        }
+        else if (verticalInput < 0) {
+            verticalInputCheck = 0;
+        }
+
+        moveDirection = orientation.forward * verticalInputCheck + orientation.right * horizontalMovement;
 
         //on ground
         if (grounded)
