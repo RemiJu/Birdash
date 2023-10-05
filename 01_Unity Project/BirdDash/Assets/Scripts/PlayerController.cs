@@ -141,7 +141,7 @@ public class PlayerController : MonoBehaviour
 
             targetRotation = Mathf.Clamp(targetRotation, -90, 90);
 
-            Debug.Log(Mathf.Lerp(-90, 90, inputRotationInfluence));
+            //Debug.Log(Mathf.Lerp(-90, 90, inputRotationInfluence));
 
             BottomWheelSpring.targetPosition += targetRotation * Time.deltaTime * acceleration2;
             BottomWheelSpring.targetPosition = Mathf.Clamp(BottomWheelSpring.targetPosition, -90, 90);

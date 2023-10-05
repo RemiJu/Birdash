@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 4d537cdb0db3d3c4780da78475e5330d
   - enabled: 1
-    path: Assets/Scenes/Gym Uni+Deliv.unity
-    guid: 056efa325484943428d954471e9d195e
+    path: Assets/Scenes/Level Gym.unity
+    guid: 25e22796798d5e244bf777f5271d3f48
   m_configObjects: {}

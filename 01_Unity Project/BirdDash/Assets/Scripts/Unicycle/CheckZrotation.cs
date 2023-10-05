@@ -13,6 +13,8 @@ public class CheckZrotation : MonoBehaviour
     public GameObject explosion;
     public bool coroutinePLaying = false;
 
+    public DeadMenu deadMenu;
+
 
     private void Update()
     {
@@ -49,7 +51,9 @@ public class CheckZrotation : MonoBehaviour
     {
         GameObject.Instantiate(explosion, this.transform.position, Quaternion.identity);
         yield return new WaitForSeconds(2);
-        SceneManager.LoadScene(0);
         coroutinePLaying = false;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        deadMenu.endGame();
     }
 }

@@ -8,7 +8,7 @@ public class MainMenu : MonoBehaviour
     public void Play()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("Gym Uni+Deliv");
+        SceneManager.LoadScene(1);
     }
     public void QuitGame()
     {
