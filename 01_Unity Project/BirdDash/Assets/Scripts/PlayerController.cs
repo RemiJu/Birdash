@@ -60,7 +60,7 @@ public class PlayerController : MonoBehaviour
 
 
 
-        if (timer != null && timer.timesIUp == false)
+        if (timer != null && timer.timesIUp == false && !PauseMenu.isPaused)
         {
             MyInput();
             SpeedControl();
