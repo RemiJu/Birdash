@@ -4,8 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - targets
   - Home
+  - Delivery
+  - Target
   layers:
   - Default
   - TransparentFX

@@ -6,10 +6,13 @@ public class PlayerController : MonoBehaviour
 {
     public HingeJoint BottomWheelHinge;
     private JointSpring BottomWheelSpring;
+    public float acceleration;
+    public float acceleration2;
 
     [Header("Movement")]
     public float moveSpeed;
     public float groundDrag;
+    float verticalInputCheck;
 
     [Header("Jump")]
     public float jumpForce;
@@ -111,7 +114,16 @@ public class PlayerController : MonoBehaviour
 
         float horizontalMovement = rb.velocity.magnitude / moveSpeed * horizontalInput;
 
-        moveDirection = orientation.forward * Mathf.Abs(verticalInput) + orientation.right * horizontalMovement;
+        
+
+        if (verticalInput >= 0) {
+            verticalInputCheck = verticalInput;
+        }
+        else if (verticalInput < 0) {
+            verticalInputCheck = 0;
+        }
+
+        moveDirection = orientation.forward * verticalInputCheck + orientation.right * horizontalMovement;
 
         //on ground
         if (grounded)
@@ -124,14 +136,14 @@ public class PlayerController : MonoBehaviour
             float gravityRotationInfluence = (wheelZAngle < 180) ? BottomWheelHinge.transform.rotation.eulerAngles.z : 360 - BottomWheelHinge.transform.rotation.eulerAngles.z;
             gravityRotationInfluence *= wheelDirection;
 
-            targetRotation += Mathf.Lerp(-90, 90, inputRotationInfluence) * Time.deltaTime;
-            targetRotation += gravityRotationInfluence * Time.deltaTime;
+            targetRotation += Mathf.Lerp(-90, 90, inputRotationInfluence) * Time.deltaTime * acceleration;
+            targetRotation += gravityRotationInfluence * Time.deltaTime * acceleration;
 
             targetRotation = Mathf.Clamp(targetRotation, -90, 90);
 
             Debug.Log(Mathf.Lerp(-90, 90, inputRotationInfluence));
 
-            BottomWheelSpring.targetPosition += targetRotation * Time.deltaTime;
+            BottomWheelSpring.targetPosition += targetRotation * Time.deltaTime * acceleration2;
             BottomWheelSpring.targetPosition = Mathf.Clamp(BottomWheelSpring.targetPosition, -90, 90);
 
             BottomWheelHinge.spring = BottomWheelSpring;
