@@ -14,6 +14,8 @@ public class DeadMenu : MonoBehaviour
     public NewTarget newTarget;
     public Timer timer;
 
+    public SoundManager soundManager;
+
     private void Awake()
     {
         deadMenu.SetActive(false);
@@ -22,6 +24,7 @@ public class DeadMenu : MonoBehaviour
    
     public void endGame()
     {
+        soundManager.GameOver();
         deadMenu.SetActive(true);
         Time.timeScale = 0;
 

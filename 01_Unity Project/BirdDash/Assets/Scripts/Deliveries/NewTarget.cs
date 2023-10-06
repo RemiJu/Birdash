@@ -22,6 +22,7 @@ public class NewTarget : MonoBehaviour
     public TMP_Text scoreText;
     public TMP_Text mealText;
 
+    public SoundManager soundManager;
 
     public void Awake()
     {
@@ -57,6 +58,8 @@ public class NewTarget : MonoBehaviour
 
                 meal--;
                 score++;
+                soundManager.Delivered();
+
             }
         }
 
@@ -73,6 +76,7 @@ public class NewTarget : MonoBehaviour
                 index = Random.Range(0, allTargets.Length);
                 currentTarget.transform.position = allTargets[index].transform.position;
                 meal++;
+                soundManager.NewDelivery();
 
             } 
         }
