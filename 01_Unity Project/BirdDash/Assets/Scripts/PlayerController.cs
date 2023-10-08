@@ -123,7 +123,7 @@ public class PlayerController : MonoBehaviour
             verticalInputCheck = 0;
         }
 
-        moveDirection = orientation.forward * verticalInputCheck + orientation.right * horizontalMovement;
+        moveDirection = orientation.forward * verticalInputCheck /*+ orientation.right * horizontalMovement*/;
 
         //on ground
         if (grounded)

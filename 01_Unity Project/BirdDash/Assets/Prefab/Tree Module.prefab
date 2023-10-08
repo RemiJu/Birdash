@@ -52,6 +52,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree Module
       objectReference: {fileID: 0}
+    - target: {fileID: 7642137232037928147, guid: b8bd5cd554afbc2438995032bcfc7ebf, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 7642137232037928147, guid: b8bd5cd554afbc2438995032bcfc7ebf, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.3825
+      objectReference: {fileID: 0}
+    - target: {fileID: 8088901257707114357, guid: b8bd5cd554afbc2438995032bcfc7ebf, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 8088901257707114357, guid: b8bd5cd554afbc2438995032bcfc7ebf, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.7431
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -97,7 +113,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.037605003, y: 0.052166495, z: 0.047147997}
   m_Center: {x: -0.0027719794, y: 0.0007305098, z: 0.035124134}
@@ -175,7 +191,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 0.018911438
   m_Center: {x: -0.0005006101, y: 0.00017391235, z: 0.039710164}
@@ -227,7 +243,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.027156057, y: 0.02715605, z: 0.03002135}
   m_Center: {x: -0.00050061103, y: 0.00017391329, z: 0.028095352}
