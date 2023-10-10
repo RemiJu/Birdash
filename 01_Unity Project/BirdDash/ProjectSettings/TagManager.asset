@@ -7,6 +7,9 @@ TagManager:
   - Home
   - Delivery
   - Target
+  - Target_Ai
+  - HomeAI
+  - Home_AI
   layers:
   - Default
   - TransparentFX
