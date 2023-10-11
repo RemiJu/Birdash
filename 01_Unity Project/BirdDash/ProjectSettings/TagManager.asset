@@ -10,6 +10,7 @@ TagManager:
   - Target_Ai
   - HomeAI
   - Home_AI
+  - EnemyBird
   layers:
   - Default
   - TransparentFX
