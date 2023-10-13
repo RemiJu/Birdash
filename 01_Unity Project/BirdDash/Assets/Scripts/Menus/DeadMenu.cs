@@ -10,14 +10,21 @@ public class DeadMenu : MonoBehaviour
     public GameObject deadMenu;
     public TMP_Text scoreText;
     public TMP_Text timerText;
+    public TMP_Text highScoreText;
 
     public NewTarget newTarget;
+    public Toolbox toolbox;
     public Timer timer;
 
+    public GameObject failed;
+    public GameObject newHighscore;
+
+    
     public SoundManager soundManager;
 
     private void Awake()
     {
+        toolbox = FindFirstObjectByType<Toolbox>();
         deadMenu.SetActive(false);
     }
 
@@ -30,6 +37,15 @@ public class DeadMenu : MonoBehaviour
 
         scoreText.text = "Final Score: " + newTarget.score;
         timerText.text = "Final Time: " + timer.timer;
+        highScoreText.text = "High Score: " + toolbox.highScore;
+
+        if (newTarget.score < toolbox.highScore)
+        {
+            failed.SetActive(true);
+        }
+        else { 
+            newHighscore.SetActive(true);
+        }
     }
 
     public void RetryGame()

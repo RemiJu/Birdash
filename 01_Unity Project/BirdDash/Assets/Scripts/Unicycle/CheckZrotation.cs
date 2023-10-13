@@ -16,6 +16,8 @@ public class CheckZrotation : MonoBehaviour
     public DeadMenu deadMenu;
     public SoundManager soundManager;
 
+   
+
 
     private void Update()
     {
@@ -50,6 +52,7 @@ public class CheckZrotation : MonoBehaviour
 
     public IEnumerator DeadSequance()
     {
+        
         soundManager.FallingSound();
         GameObject.Instantiate(explosion, this.transform.position, Quaternion.identity);
         yield return new WaitForSeconds(2);

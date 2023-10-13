@@ -12,8 +12,8 @@ public class NewTarget : MonoBehaviour
     public Vector3 distance;
     public float threshold;
 
-    public float meal;
-    public float score;
+    public int meal;
+    public int score;
     
 
     GameObject[] allTargets;
