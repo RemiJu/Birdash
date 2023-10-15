@@ -19,7 +19,7 @@ public class DeadMenu : MonoBehaviour
     public GameObject failed;
     public GameObject newHighscore;
 
-    
+    public Dialogue dialogue;
     public SoundManager soundManager;
 
     private void Awake()
@@ -31,6 +31,8 @@ public class DeadMenu : MonoBehaviour
    
     public void endGame()
     {
+        //dialogue.textBox.SetActive(false);
+        //dialogue.Customers[dialogue.currentLine].gameObject.SetActive(false);
         soundManager.GameOver();
         deadMenu.SetActive(true);
         Time.timeScale = 0;

@@ -23,10 +23,11 @@ public class NewTarget : MonoBehaviour
     public TMP_Text mealText;
 
     public SoundManager soundManager;
+    public Dialogue dialogue;
 
     public void Awake()
     {
-        
+       
         atHome = false;
         meal = 0;
         score = 0;
@@ -39,7 +40,7 @@ public class NewTarget : MonoBehaviour
        
         if (meal == 0) {
             currentTarget.transform.position = home.transform.position;
-        
+            
         }
 
         SetScoreText();
@@ -60,6 +61,8 @@ public class NewTarget : MonoBehaviour
                 score++;
                 soundManager.Delivered();
 
+                dialogue.currentLine = dialogue.currentLine++;
+
             }
         }
 
@@ -78,6 +81,8 @@ public class NewTarget : MonoBehaviour
                 meal++;
                 soundManager.NewDelivery();
 
+                dialogue.currentLine = Random.Range(0, dialogue.lines.Length); ;
+                dialogue.StartDialogue(dialogue.currentLine);
             } 
         }
 
