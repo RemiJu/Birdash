@@ -62,7 +62,8 @@ public class NewTarget : MonoBehaviour
                 soundManager.Delivered();
 
                 //dialogue.currentLine = dialogue.currentLine++;
-
+                dialogue.currentLine = Random.Range(0, dialogue.lines.Length);
+                dialogue.StartDialogue(dialogue.currentLine);
             }
         }
 
@@ -81,8 +82,7 @@ public class NewTarget : MonoBehaviour
                 meal++;
                 soundManager.NewDelivery();
 
-                dialogue.currentLine = Random.Range(0, dialogue.lines.Length);
-                dialogue.StartDialogue(dialogue.currentLine);
+               
             } 
         }
 

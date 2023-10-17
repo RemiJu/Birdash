@@ -148,7 +148,11 @@ public class PlayerController : MonoBehaviour
 
             BottomWheelHinge.spring = BottomWheelSpring;
 
-            rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
+            if (transform.position.y <= 0.5f)
+            {   rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);}
+
+            if (transform.position.y > 0.5f)
+            { rb.AddForce(moveDirection.normalized * moveSpeed * 75f, ForceMode.Force); }
         }
         //in air
         else if (!grounded)
@@ -170,6 +174,8 @@ public class PlayerController : MonoBehaviour
             rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
         
         }
+
+        
     }
 
     private void Jump() 
