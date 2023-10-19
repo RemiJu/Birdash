@@ -11,6 +11,9 @@ TagManager:
   - HomeAI
   - Home_AI
   - EnemyBird
+  - targets
+  - Ramp
+  - Tutorial Delivery
   layers:
   - Default
   - TransparentFX
