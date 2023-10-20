@@ -24,6 +24,7 @@ public class NewTargetAi : MonoBehaviour
 
     public void Awake()
     {
+        home = GameObject.FindGameObjectWithTag("HomeAI").transform;
         
         atHome = false;
         meal = 0;

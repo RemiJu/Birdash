@@ -40,6 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5847922855836410299}
+  - component: {fileID: 4989292307653359141}
   m_Layer: 0
   m_Name: EnemyBird
   m_TagString: Untagged
@@ -64,6 +65,19 @@ Transform:
   - {fileID: 7795104372253937115}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4989292307653359141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2776699292825956417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a4d9e799c413ad45b083392f4b28767, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EnemyBird: {fileID: 2776699292825956417}
 --- !u!1 &3206955192332361761
 GameObject:
   m_ObjectHideFlags: 0
@@ -161,7 +175,7 @@ GameObject:
   - component: {fileID: 8099167323110404153}
   - component: {fileID: 1393075327041161794}
   m_Layer: 0
-  m_Name: AI_Unicycle
+  m_Name: AI_Unicycle_0
   m_TagString: EnemyBird
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -223,6 +237,8 @@ MonoBehaviour:
   targetAi: {fileID: 4221956094478609030}
   meal: 0
   sentMessage: 0
+  crash: {fileID: 5654710655676923502, guid: 70574b3d8c1282f4087afcbb31544fea, type: 3}
+  Condor: {fileID: 2776699292825956417}
   enemy: {fileID: 0}
   colliderMeal: 0
   thisHasMeal: 0
@@ -477,7 +493,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8099434181220213772}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1

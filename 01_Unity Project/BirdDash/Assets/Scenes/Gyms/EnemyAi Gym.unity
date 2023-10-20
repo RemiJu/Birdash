@@ -33130,8 +33130,13 @@ MonoBehaviour:
   deadMenu: {fileID: 141227864}
   scoreText: {fileID: 917170012}
   timerText: {fileID: 329789291}
+  highScoreText: {fileID: 0}
   newTarget: {fileID: 1910361522379573233}
+  toolbox: {fileID: 0}
   timer: {fileID: 5973598667461416782}
+  failed: {fileID: 0}
+  newHighscore: {fileID: 0}
+  dialogue: {fileID: 0}
   soundManager: {fileID: 497116465}
 --- !u!1001 &1924765142
 PrefabInstance:
@@ -38216,10 +38221,6 @@ PrefabInstance:
     - target: {fileID: 2776699292825956417, guid: bd0bee4e064ce5a46aab446a5f38ee11, type: 3}
       propertyPath: m_Name
       value: EnemyBird
-      objectReference: {fileID: 0}
-    - target: {fileID: 3320292130489143993, guid: bd0bee4e064ce5a46aab446a5f38ee11, type: 3}
-      propertyPath: m_Name
-      value: AI_Unicycle_0
       objectReference: {fileID: 0}
     - target: {fileID: 4221956094478609030, guid: bd0bee4e064ce5a46aab446a5f38ee11, type: 3}
       propertyPath: home

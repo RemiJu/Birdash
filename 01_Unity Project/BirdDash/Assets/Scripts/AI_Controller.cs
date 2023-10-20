@@ -11,6 +11,9 @@ public class AI_Controller : MonoBehaviour
     public float meal;
     public bool sentMessage;
 
+    public GameObject crash;
+    public GameObject Condor;
+
     public GameObject enemy;
 
     //set colliderMeal to true if collider has a meal
@@ -36,12 +39,14 @@ public class AI_Controller : MonoBehaviour
 
         if (thisHasMeal && !colliderMeal && !sentMessage && enemy != null) 
         {
-            Debug.Log(this.gameObject + " FIGHT with " + enemy + " !");
+            StartCoroutine(CrashSequence());
+            //Debug.Log(this.gameObject + " FIGHT with " + enemy + " !");
             sentMessage = true;
         }
         if (!thisHasMeal && colliderMeal && !sentMessage)
         {
-            Debug.Log(this.gameObject + " FIGHT with " + enemy + " !");
+            StartCoroutine(CrashSequence());
+            //Debug.Log(this.gameObject + " FIGHT with " + enemy + " !");
             sentMessage = true;
         }
     }
@@ -58,12 +63,12 @@ public class AI_Controller : MonoBehaviour
 
             if (targetAi.meal > 0)
             {
-                Debug.Log(this.gameObject + " has a meal.");
+                //Debug.Log(this.gameObject + " has a meal.");
                 other.SendMessage("IHasMeal");
             }
             else
             {
-                Debug.Log(this.gameObject + " has no meal.");
+                //Debug.Log(this.gameObject + " has no meal.");
                 other.SendMessage("IHasNoMeal");
             }
         
@@ -93,4 +98,11 @@ public class AI_Controller : MonoBehaviour
     colliderMeal = false;
     }
 
+    public IEnumerator CrashSequence()
+    {
+        Instantiate(crash, this.transform.position, this.transform.rotation);
+        yield return new WaitForEndOfFrame();
+        
+        SendMessageUpwards("DestroyThisEnemyBird");
+    }
 }
