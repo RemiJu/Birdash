@@ -10,7 +10,11 @@ public class CheckZrotationTEST : MonoBehaviour
     public float rotationMin;
     public float floorMin;
     public PlayerController playerController;
+    public GameObject explosion;
+    public bool coroutinePLaying = false;
 
+    public TutoDeadMenu tutoDeadMenu;
+    public SoundManager soundManager;
 
 
 
@@ -23,17 +27,38 @@ public class CheckZrotationTEST : MonoBehaviour
 
         if ((this.transform.rotation.eulerAngles.z > rotationMax && this.transform.rotation.eulerAngles.z < floorMax))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            if (!coroutinePLaying)
+            {
+                StartCoroutine(DeadSequance());
+                coroutinePLaying = true;
+            }
+
         }
 
         if ((this.transform.rotation.eulerAngles.z > floorMin && this.transform.rotation.eulerAngles.z < rotationMin))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            if (!coroutinePLaying)
+            {
+                StartCoroutine(DeadSequance());
+                coroutinePLaying = true;
+            }
 
         }
 
         //Debug.Log(this.transform.rotation.eulerAngles.z);
 
 
+    }
+
+    public IEnumerator DeadSequance()
+    {
+
+        soundManager.FallingSound();
+        GameObject.Instantiate(explosion, this.transform.position, Quaternion.identity);
+        yield return new WaitForSeconds(2);
+        coroutinePLaying = false;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        tutoDeadMenu.endGame();
     }
 }

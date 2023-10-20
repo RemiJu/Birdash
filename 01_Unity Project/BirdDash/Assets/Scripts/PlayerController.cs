@@ -149,10 +149,12 @@ public class PlayerController : MonoBehaviour
             BottomWheelHinge.spring = BottomWheelSpring;
 
             if (transform.position.y <= 0.5f)
-            {   rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);}
+            {
+                rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
+            }
 
             if (transform.position.y > 0.5f)
-            { rb.AddForce(moveDirection.normalized * moveSpeed * 75f, ForceMode.Force); }
+            { rb.AddForce(moveDirection.normalized * moveSpeed * 20f, ForceMode.Force); }
         }
         //in air
         else if (!grounded)

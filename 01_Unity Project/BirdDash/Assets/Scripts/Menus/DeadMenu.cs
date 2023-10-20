@@ -39,14 +39,19 @@ public class DeadMenu : MonoBehaviour
 
         scoreText.text = "Final Score: " + newTarget.score;
         timerText.text = "Final Time: " + timer.timer;
-        highScoreText.text = "High Score: " + toolbox.highScore;
+       
 
-        if (newTarget.score < toolbox.highScore)
+        if (newTarget.score > toolbox.highScore)
         {
-            failed.SetActive(true);
-        }
-        else { 
+            toolbox.SetNewHighScore();
             newHighscore.SetActive(true);
+            highScoreText.text = "High Score: " + toolbox.highScore;
+
+        }
+        else {
+            failed.SetActive(true);
+            highScoreText.text = "High Score: " + toolbox.highScore;
+
         }
     }
 

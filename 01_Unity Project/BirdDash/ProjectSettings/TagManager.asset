@@ -14,6 +14,7 @@ TagManager:
   - targets
   - Ramp
   - Tutorial Delivery
+  - TutoTarget
   layers:
   - Default
   - TransparentFX

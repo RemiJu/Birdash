@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using static Unity.VisualScripting.Member;
@@ -47,18 +48,29 @@ public class Toolbox : MonoBehaviour
 
     public void Update()
     {
-        if (newTarget == null)
+        if (SceneManager.GetActiveScene().buildIndex > 3)
         {
-            newTarget = FindObjectOfType<NewTarget>();
-        }
-        score = newTarget.score;
 
-        if (score > highScore) {
-            SetNewHighScore();
-            //Debug.Log("New High Score is: " + highScore);
-        }
 
-       
+            if (newTarget == null)
+            {
+                newTarget = FindObjectOfType<NewTarget>();
+            }
+            score = newTarget.score;
+
+            if (score > highScore)
+            {
+                //SetNewHighScore();
+                //Debug.Log("New High Score is: " + highScore);
+            }
+
+
+            if (Input.GetKey(KeyCode.F4))
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+            }
+        }
 
     }
 
@@ -73,7 +85,7 @@ public class Toolbox : MonoBehaviour
 
     public void SetHighScoreText()
     {
-        
+        highScoreText.text = "High Score: " + highScore;
     }
 
 
