@@ -383,7 +383,7 @@ GameObject:
   - component: {fileID: 761091625}
   m_Layer: 0
   m_Name: Door
-  m_TagString: Tutorial Delivery
+  m_TagString: TutoTarget
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3838,7 +3838,7 @@ GameObject:
   - component: {fileID: 3652862741259314335}
   m_Layer: 0
   m_Name: Target
-  m_TagString: Target
+  m_TagString: TutoTarget
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -28,7 +28,7 @@ public class CrashSequence : MonoBehaviour
     public IEnumerator CrashSequenceStart()
     {
         
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(10);
 
         allTargets = GameObject.FindGameObjectsWithTag("Delivery");
         index = UnityEngine.Random.Range(0, allTargets.Length);

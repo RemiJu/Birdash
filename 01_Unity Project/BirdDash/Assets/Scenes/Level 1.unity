@@ -63045,6 +63045,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 8530708956624040609}
   - {fileID: 120806908991391413}
   m_Father: {fileID: 4168331147924741062}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -63136,12 +63137,11 @@ RectTransform:
   - {fileID: 3711405900711798572}
   - {fileID: 4027603361240577894}
   - {fileID: 720584501948702415}
-  - {fileID: 8530708956624040609}
   m_Father: {fileID: 79954910169754751}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -777.8572, y: 11.818216}
+  m_AnchoredPosition: {x: -822, y: 11.818216}
   m_SizeDelta: {x: 256, y: 256}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &164244558172356098
@@ -65067,12 +65067,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 45
-  m_fontSizeBase: 45
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_fontSizeMax: 45
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
@@ -65967,8 +65967,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1992325026776067480}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.69, z: 3.03}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.69000006, z: 3.0300007}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -66111,7 +66111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2764ce15aa5905408a4bdd45d1aad48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wheel: {fileID: 7631641605928184309}
+  wheel: {fileID: 3763987306133522853}
   wheelQuat: {x: 0, y: 0, z: 0, w: 0}
 --- !u!23 &3109967260736086975
 MeshRenderer:
@@ -66632,8 +66632,8 @@ MonoBehaviour:
     m_InputAxisName: Mouse X
     m_InputAxisValue: 0
     m_InvertInput: 0
-    m_MinValue: -175
-    m_MaxValue: 175
+    m_MinValue: -180
+    m_MaxValue: 180
     m_Wrap: 1
     m_Recentering:
       m_enabled: 0
@@ -68950,7 +68950,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 2
 --- !u!114 &6109418950782043529
 MonoBehaviour:
@@ -70182,6 +70182,7 @@ MonoBehaviour:
   textSpeed: 0.01
   currentLine: 0
   endAtLine: 0
+  currentBird: 0
   Customers:
   - {fileID: 7530800637228759697}
   - {fileID: 9101325105575396393}
@@ -70191,18 +70192,6 @@ MonoBehaviour:
   - {fileID: 1033185448486984549}
   - {fileID: 7676541555463891878}
   - {fileID: 6122905368587707782}
-  - {fileID: 7530800637228759697}
-  - {fileID: 9101325105575396393}
-  - {fileID: 7591257902538782770}
-  - {fileID: 3118921307399752026}
-  - {fileID: 6122905368587707782}
-  - {fileID: 3439419224615706609}
-  - {fileID: 1033185448486984549}
-  - {fileID: 7676541555463891878}
-  - {fileID: 6122905368587707782}
-  - {fileID: 3118921307399752026}
-  - {fileID: 7591257902538782770}
-  - {fileID: 7591257902538782770}
 --- !u!23 &7510285612611547664
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -71464,12 +71453,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 120806908991391413}
+  m_Father: {fileID: 79954910169754751}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 837.5, y: 115.999954}
-  m_SizeDelta: {x: 1125, y: 200}
+  m_AnchoredPosition: {x: 20, y: 100}
+  m_SizeDelta: {x: -120, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8543860174844220788
 MonoBehaviour:
@@ -71876,7 +71865,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3909441163187665511}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.015448083, y: -0.0007476847, z: 0.000011551675, w: 0.99988043}
+  m_LocalRotation: {x: 0.015448083, y: -0.0007476836, z: 0.000011551659, w: 0.99988043}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

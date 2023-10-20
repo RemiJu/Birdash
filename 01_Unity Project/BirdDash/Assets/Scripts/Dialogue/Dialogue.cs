@@ -10,12 +10,13 @@ public class Dialogue : MonoBehaviour
 
     public TextAsset textFile;
     public string[] lines;
+    
     public float textSpeed;
 
     public int currentLine;
     public int endAtLine;
 
-    //private int index;
+    public int currentBird;
 
     public GameObject[] Customers;
 
@@ -74,7 +75,8 @@ public class Dialogue : MonoBehaviour
     IEnumerator TypeLine(int currentLine)
     {
         textBox.SetActive(true);
-        Customers[currentLine].gameObject.SetActive(true);  
+        currentBird = Random.Range(0, Customers.Length);
+        Customers[currentBird].gameObject.SetActive(true);  
         foreach (char c in lines[currentLine].ToCharArray())
         {
             textComponent.text += c;
@@ -82,7 +84,8 @@ public class Dialogue : MonoBehaviour
         }
         yield return new WaitForSeconds(2.5f);
         textBox.SetActive(false);
-        Customers[currentLine].gameObject.SetActive(false);
+        textComponent.text = "";
+        Customers[currentBird].gameObject.SetActive(false);
     }
 
     //void NextLine()
