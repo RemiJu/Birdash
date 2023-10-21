@@ -126,8 +126,8 @@ public class PlayerController : MonoBehaviour
         moveDirection = orientation.forward * verticalInputCheck /*+ orientation.right * horizontalMovement*/;
 
         //on ground
-        if (grounded)
-        {
+        //if (grounded)
+        //{
             float inputRotationInfluence = (-horizontalInput + 1) / 2;
 
             float wheelZAngle = BottomWheelHinge.transform.rotation.eulerAngles.z;
@@ -155,12 +155,12 @@ public class PlayerController : MonoBehaviour
 
             if (transform.position.y > 0.5f)
             { rb.AddForce(moveDirection.normalized * moveSpeed * 20f, ForceMode.Force); }
-        }
-        //in air
-        else if (!grounded)
-        {
-            rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);
-        }
+        //}
+        ////in air
+        //else if (!grounded)
+        //{
+        //    rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);
+        //}
 
        
     }
