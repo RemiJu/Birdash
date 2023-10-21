@@ -20,6 +20,8 @@ public class AI_Controller : MonoBehaviour
     public bool colliderMeal;
     public bool thisHasMeal;
 
+    
+
 
     public void Awake()
     {
