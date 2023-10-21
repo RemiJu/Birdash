@@ -63,36 +63,36 @@ public class NewTargetAi : MonoBehaviour
 
         //if (chase)
         //{
-            if (collision.gameObject.CompareTag("Player"))
-            {
+            //if (collision.gameObject.CompareTag("Player"))
+            //{
                 
 
-                currentTarget.transform.position = collision.gameObject.transform.position;
+            //    currentTarget.transform.position = collision.gameObject.transform.position;
 
-                if ((distance.magnitude > chaseThreshold))
-                {
-                    if (meal == 0)
-                    {
-                        currentTarget.transform.position = home.transform.position;
-                    }
+            //    if ((distance.magnitude > chaseThreshold))
+            //    {
+            //        if (meal == 0)
+            //        {
+            //            currentTarget.transform.position = home.transform.position;
+            //        }
 
-                    if (meal > 0)
-                    {
+            //        if (meal > 0)
+            //        {
 
-                        allTargets = GameObject.FindGameObjectsWithTag("Delivery");
-                        index = Random.Range(0, allTargets.Length);
-                        currentTarget.transform.position = allTargets[index].transform.position;
+            //            allTargets = GameObject.FindGameObjectsWithTag("Delivery");
+            //            index = Random.Range(0, allTargets.Length);
+            //            currentTarget.transform.position = allTargets[index].transform.position;
 
-                    }
+            //        }
 
 
 
-                }
+            //    }
 
 
             //}
-        }
-        else if (collision.gameObject.CompareTag("Delivery"))
+        //}
+         if (collision.gameObject.CompareTag("Delivery"))
         {
             
 
@@ -106,7 +106,7 @@ public class NewTargetAi : MonoBehaviour
             }
         }
 
-        else if (collision.gameObject.CompareTag("HomeAI"))
+         if (collision.gameObject.CompareTag("HomeAI"))
             
         {
             atHome = true;

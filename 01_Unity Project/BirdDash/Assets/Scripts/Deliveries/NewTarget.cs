@@ -34,6 +34,12 @@ public class NewTarget : MonoBehaviour
         
     }
 
+    public void Start()
+    {
+        dialogue.currentLine = Random.Range(0, dialogue.lines.Length);
+        dialogue.StartDialogue(dialogue.currentLine);
+    }
+
     public void Update()
     {
         distance = currentTarget.transform.position - transform.position;

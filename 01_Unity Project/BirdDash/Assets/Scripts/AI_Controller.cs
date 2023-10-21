@@ -6,8 +6,8 @@ using UnityEngine.AI;
 public class AI_Controller : MonoBehaviour
 {
     NavMeshAgent agent;
-    public GameObject target;
-    public NewTargetAi targetAi;
+    public GameObject target; //reference to the moving target
+    public NewTargetAi targetAi; //reference to the script
     public float meal;
     public bool sentMessage;
 

@@ -9,9 +9,9 @@ public class Toolbox : MonoBehaviour
 {
     [Header("Variables")]
     public int score = 0;
-    public int highScore;
-    
-      
+    public int highScore_1;
+    public int highScore_2;
+
     public static Toolbox instance;
     public NewTarget newTarget;
     public TMP_Text highScoreText;
@@ -24,7 +24,8 @@ public class Toolbox : MonoBehaviour
     {
         MakeSingleton();
        
-        highScore = 0;
+        highScore_1 = 0;
+        highScore_2 = 0;
 
     }
 
@@ -56,15 +57,10 @@ public class Toolbox : MonoBehaviour
             {
                 newTarget = FindObjectOfType<NewTarget>();
             }
+           
             score = newTarget.score;
 
-            if (score > highScore)
-            {
-                //SetNewHighScore();
-                //Debug.Log("New High Score is: " + highScore);
-            }
-
-
+           
             if (Input.GetKey(KeyCode.F4))
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -76,16 +72,33 @@ public class Toolbox : MonoBehaviour
 
     /// SCORE----------------------------------------------------SCORE
 
-    public void SetNewHighScore() { 
-    
-        highScore = score;
+    public void SetNewHighScore() {
+
+        if (SceneManager.GetActiveScene().name == "Level 1")
+        {
+            highScore_1 = score;
+        }
+        if (SceneManager.GetActiveScene().name == "Level 2")
+        {
+            highScore_2 = score;
+        }
+        //highScore = score;
         
 
     }
 
     public void SetHighScoreText()
     {
-        highScoreText.text = "High Score: " + highScore;
+        if (SceneManager.GetActiveScene().name == "Level 1")
+        {
+            highScoreText.text = "High Score: " + highScore_1;
+        }
+        if (SceneManager.GetActiveScene().name == "Level 2")
+        {
+            highScoreText.text = "High Score: " + highScore_2;
+        }
+        //highScore = score;
+        //highScoreText.text = "High Score: " + highScore;
     }
 
 

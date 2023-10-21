@@ -39,20 +39,54 @@ public class DeadMenu : MonoBehaviour
 
         scoreText.text = "Final Score: " + newTarget.score;
         timerText.text = "Final Time: " + timer.timer;
-       
 
-        if (newTarget.score > toolbox.highScore)
+
+        if (SceneManager.GetActiveScene().name == "Level 1")
         {
-            toolbox.SetNewHighScore();
-            newHighscore.SetActive(true);
-            highScoreText.text = "High Score: " + toolbox.highScore;
+            if (newTarget.score > toolbox.highScore_1)
+            {
+                toolbox.SetNewHighScore();
+                newHighscore.SetActive(true);
+                highScoreText.text = "High Score: " + toolbox.highScore_1;
 
-        }
-        else {
-            failed.SetActive(true);
-            highScoreText.text = "High Score: " + toolbox.highScore;
+            }
+            else
+            {
+                failed.SetActive(true);
+                highScoreText.text = "High Score: " + toolbox.highScore_1;
 
+            }
         }
+
+        if (SceneManager.GetActiveScene().name == "Level 2")
+        {
+            if (newTarget.score > toolbox.highScore_2)
+            {
+                toolbox.SetNewHighScore();
+                newHighscore.SetActive(true);
+                highScoreText.text = "High Score: " + toolbox.highScore_2;
+
+            }
+            else
+            {
+                failed.SetActive(true);
+                highScoreText.text = "High Score: " + toolbox.highScore_2;
+
+            }
+        }
+
+        //if (newTarget.score > toolbox.highScore)
+        //{
+        //    toolbox.SetNewHighScore();
+        //    newHighscore.SetActive(true);
+        //    highScoreText.text = "High Score: " + toolbox.highScore;
+
+        //}
+        //else {
+        //    failed.SetActive(true);
+        //    highScoreText.text = "High Score: " + toolbox.highScore;
+
+        //}
     }
 
     public void RetryGame()
