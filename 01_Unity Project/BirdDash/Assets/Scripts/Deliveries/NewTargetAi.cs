@@ -92,7 +92,7 @@ public class NewTargetAi : MonoBehaviour
 
             //}
         }
-        if (collision.gameObject.CompareTag("Delivery"))
+        else if (collision.gameObject.CompareTag("Delivery"))
         {
             
 
@@ -106,7 +106,7 @@ public class NewTargetAi : MonoBehaviour
             }
         }
 
-        if (collision.gameObject.CompareTag("HomeAI"))
+        else if (collision.gameObject.CompareTag("HomeAI"))
             
         {
             atHome = true;
