@@ -15,36 +15,28 @@ public class NewTargetAi : MonoBehaviour
     public float chaseThreshold = 20f;
 
     public float meal;
-   
-    
 
+
+    GameObject[] homes;
     GameObject[] allTargets;
     int index;
+    int indexH;
 
     public bool chase;
     
 
     public void Awake()
     {
-        home = GameObject.FindGameObjectWithTag("HomeAI").transform;
-        
+
+        SetHome();
+
         atHome = false;
         meal = 0;
 
-        if (SceneManager.GetActiveScene().name == "EnemyAi Gym")   
-        {
-            chase = true;
-            
-        }
-        if (SceneManager.GetActiveScene().name == "Level 1")
-        {
-            chase = false;
-        }
 
-        
 
     }
-
+  
     public void Update()
     {
         distance = currentTarget.transform.position - transform.position;
@@ -137,6 +129,11 @@ public class NewTargetAi : MonoBehaviour
 
     }
 
+    public void SetHome() {
+        homes = GameObject.FindGameObjectsWithTag("HomeAI");
+        index = Random.Range(0, homes.Length);
+        home = homes[index].transform;
+    }
 
 
 

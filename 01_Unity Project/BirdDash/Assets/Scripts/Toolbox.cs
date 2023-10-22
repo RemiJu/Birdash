@@ -16,8 +16,17 @@ public class Toolbox : MonoBehaviour
     public NewTarget newTarget;
     public TMP_Text highScoreText;
 
+    [Header("Music")]
+    public AudioClip tutorial;
+    public AudioClip level_1;
+    public AudioClip level_2;
+    public AudioClip MainMenu;
+    public AudioSource audioSource;
+    public bool lvl1;
+    public bool lvl2;
+    public bool tuto;
+    public bool menu;
 
-   
 
 
     private void Awake()
@@ -68,9 +77,71 @@ public class Toolbox : MonoBehaviour
             }
         }
 
+       StartBGmusic();
+
+      
     }
 
     /// SCORE----------------------------------------------------SCORE
+
+
+    public void StartBGmusic()
+    {
+        if (SceneManager.GetActiveScene().name == "Level 1" && !lvl1)
+        {
+            audioSource.Stop();
+            audioSource.clip = level_1;
+            audioSource.volume = 0.3f;
+            audioSource.loop = true;
+            audioSource.Play();
+            lvl1 = true;
+            lvl2 = false;
+            tuto = false;
+            menu = false;
+            
+        }
+        if (SceneManager.GetActiveScene().name == "Level 2" && !lvl2)
+        {
+            audioSource.Stop();
+            audioSource.clip = level_2;
+            audioSource.volume = 0.3f;
+            audioSource.loop = true;
+            audioSource.Play();
+            lvl1 = false;
+            lvl2 = true;
+            tuto = false;
+            menu = false;
+           
+
+        }
+        if ((SceneManager.GetActiveScene().name == "Tutorial A" || SceneManager.GetActiveScene().name == "Tutorial B" || SceneManager.GetActiveScene().name == "Tutorial C") && !tuto)
+        {
+            audioSource.Stop();
+            audioSource.clip = tutorial;
+            audioSource.volume = 0.3f;
+            audioSource.loop = true;
+            audioSource.Play();
+            lvl1 = false;
+            lvl2 = false;
+            tuto = true;
+            menu = false;
+        }
+
+        if (SceneManager.GetActiveScene().name == "MainMenu" && !menu)
+        {
+            audioSource.Stop();
+            audioSource.clip = MainMenu;
+            audioSource.volume = 0.3f;
+            audioSource.loop = true;
+            audioSource.Play();
+            lvl1 = false;
+            lvl2 = false;
+            tuto = false;
+            menu = true;
+
+        }
+    }
+
 
     public void SetNewHighScore() {
 

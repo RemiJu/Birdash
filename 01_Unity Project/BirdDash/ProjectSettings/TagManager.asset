@@ -9,13 +9,13 @@ TagManager:
   - Target
   - Target_Ai
   - HomeAI
-  - Home_AI
   - EnemyBird
   - targets
   - Ramp
   - Tutorial Delivery
   - TutoTarget
   - Crash
+  - Highscore
   layers:
   - Default
   - TransparentFX
