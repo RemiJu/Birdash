@@ -60,6 +60,7 @@ public class NewTarget : MonoBehaviour
 
 
             meal = 0;
+            soundManager.Stolen();
         }
 
 

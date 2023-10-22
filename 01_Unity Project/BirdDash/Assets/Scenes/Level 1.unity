@@ -16520,6 +16520,7 @@ MonoBehaviour:
   gameOver: {fileID: 8300000, guid: 3eb2db72b27f1984198e035f8d5d7986, type: 3}
   successDelivery: {fileID: 8300000, guid: 02a6c002ca6f3e0499c831fe60dd7997, type: 3}
   newDelivery: {fileID: 8300000, guid: a603a5e619bceb041aa4fbd985720ff1, type: 3}
+  stolenDelivery: {fileID: 8300000, guid: ec0ac46750a86cc43ac0db6699b201ee, type: 3}
 --- !u!82 &497116466
 AudioSource:
   m_ObjectHideFlags: 0
@@ -65103,7 +65104,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1945072288280157260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71806,7 +71807,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3909441163187665511}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.015448083, y: -0.0007476847, z: 0.000011551675, w: 0.99988043}
+  m_LocalRotation: {x: 0.015448083, y: -0.0007476836, z: 0.000011551659, w: 0.99988043}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

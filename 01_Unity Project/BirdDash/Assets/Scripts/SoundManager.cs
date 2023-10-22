@@ -10,10 +10,10 @@ public class SoundManager : MonoBehaviour
     public AudioClip gameOver;
     public AudioClip successDelivery;
     public AudioClip newDelivery;
+    public AudioClip stolenDelivery;
 
-   
 
-   public void FallingSound() 
+    public void FallingSound() 
     {
         audioSource.PlayOneShot(fallOver);
     }
@@ -32,4 +32,9 @@ public class SoundManager : MonoBehaviour
     {
         audioSource.PlayOneShot(gameOver);
     }
+    public void Stolen()
+    {
+        audioSource.PlayOneShot(stolenDelivery);
+    }
 }
+
