@@ -55,6 +55,14 @@ public class NewTarget : MonoBehaviour
 
     public void OnTriggerEnter(Collider collision)
     {
+        if (collision.gameObject.CompareTag("EnemyBird"))
+        {
+
+
+            meal = 0;
+        }
+
+
         if (collision.gameObject.CompareTag("Delivery"))
         {
             
