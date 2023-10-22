@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 47495351}
   - component: {fileID: 47495350}
   - component: {fileID: 47495349}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Prism
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1793,7 +1793,7 @@ GameObject:
   - component: {fileID: 1213886907}
   - component: {fileID: 1213886906}
   - component: {fileID: 1213886905}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Prism (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2109,7 +2109,7 @@ GameObject:
   - component: {fileID: 1254890757}
   - component: {fileID: 1254890756}
   - component: {fileID: 1254890755}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Prism (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2590,7 +2590,7 @@ GameObject:
   - component: {fileID: 1911378999}
   - component: {fileID: 1911378998}
   - component: {fileID: 1911378997}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Prism (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5942,6 +5942,10 @@ MonoBehaviour:
   rotationMin: 271
   floorMin: 265
   playerController: {fileID: 1093932323271745583}
+  explosion: {fileID: 0}
+  coroutinePLaying: 0
+  tutoDeadMenu: {fileID: 0}
+  soundManager: {fileID: 0}
 --- !u!4 &8189889774290878270
 Transform:
   m_ObjectHideFlags: 3
@@ -5950,7 +5954,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4443970397128788764}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.015448081, y: -0.0007476597, z: 0.000011551289, w: 0.99988043}
+  m_LocalRotation: {x: 0.015448081, y: -0.0007476608, z: 0.000011551305, w: 0.99988043}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -6433,7 +6437,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2107319162538792579}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.04201937, y: -0.00074707175, z: -0.00003141924, w: 0.99911654}
+  m_LocalRotation: {x: -0.04201937, y: -0.0007471064, z: -0.000031420695, w: 0.99911654}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
