@@ -16,6 +16,7 @@ TagManager:
   - TutoTarget
   - Crash
   - Highscore
+  - DirectionTracking
   layers:
   - Default
   - TransparentFX

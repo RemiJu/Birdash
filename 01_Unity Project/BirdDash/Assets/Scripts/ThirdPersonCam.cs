@@ -13,7 +13,7 @@ public class ThirdPersonCam : MonoBehaviour
 
     public float rotationSpeed;
 
-    public void Start()
+    public void Awake()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;

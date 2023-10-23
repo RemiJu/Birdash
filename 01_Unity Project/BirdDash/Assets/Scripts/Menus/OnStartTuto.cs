@@ -13,10 +13,10 @@ public class OnStartTuto : MonoBehaviour
     {
 
         startMenu.SetActive(true);
-        Time.timeScale = 0;
-
+        
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+        Time.timeScale = 0;
     }
 
 
@@ -38,4 +38,6 @@ public class OnStartTuto : MonoBehaviour
     {
         Application.Quit();
     }
+
+   
 }

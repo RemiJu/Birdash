@@ -19,6 +19,7 @@ Programmer: Marie
 CONTROLS
 
 W to go forward
+S to brake
 A/D to keep balance
 Mouse to move the camera and choose forward direction
 
@@ -29,11 +30,21 @@ Debug: F4 to reload scene
 CREDITS
 
 Assets:
-Customizable Skybox - Key Mouse
-Explosion and smoke particle effects from Simple Particles FX: Toon Effects - Indian Ocean Assets
+Customizable Skybox :: Key Mouse
+Explosion and smoke particle effects from Simple Particles FX: Toon Effects :: Indian Ocean Assets
 
 Music:
-Pixel Playground - Color Parade
-The Incident - Soundroll
-Threshold - Michael Grubb
-Chilling - 3RG3R
+Pixel Playground :: Color Parade (uppbeat.io)
+The Incident :: Soundroll (uppbeat.io)
+Threshold :: Michael Grubb (uppbeat.io)
+Cute Happy Background Music :: Seth_Makes_Sounds (freesound.org)
+
+Sounds:
+Bird Sounds >> Bird Noise - 5 :: SpaceJoe (freesound.org)
+SFX for games/apps >> Success 01 :: rhodesmas (freesound.org)
+Jingles >> End Game - Fail :: davidbain (freesound.org)
+Retro You Lose SFX :: suntemple (freesound.org)
+
+ 
+
+
